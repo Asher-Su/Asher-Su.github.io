@@ -10,9 +10,10 @@
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       background-color: #f7f7f7;
+      line-height: 1.6;
     }
     .hero {
       background: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
@@ -33,6 +34,7 @@
     .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 90%;
     }
     .hero img {
       width: 120px;
@@ -56,7 +58,8 @@
       justify-content: center;
       background: transparent;
       margin-top: 20px;
-      gap: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
       z-index: 1;
       position: relative;
     }
@@ -64,54 +67,102 @@
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
+      padding: 8px 15px;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
     }
     .nav-bar a:hover {
-      border-bottom: 2px solid #fff;
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
     .section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 60px auto;
       padding: 0 20px;
     }
     .section h3 {
-      font-size: 1.5em;
-      border-bottom: 2px solid #333;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
+      font-size: 1.8em;
+      border-bottom: 2px solid #4a89dc;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      color: #2c3e50;
     }
     .content-box {
       background: #fff;
-      padding: 20px;
+      padding: 25px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+    .content-box p {
+      margin: 15px 0;
+      font-size: 1.1em;
     }
     .content-box ol {
       margin: 0;
       padding-left: 20px;
     }
     .content-box li {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       line-height: 1.6;
+      padding-left: 10px;
+    }
+    .content-box strong {
+      color: #2c3e50;
+    }
+    .content-box em {
+      color: #7f8c8d;
+      font-style: italic;
     }
     .social-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      color: #000;
-      border: 2px solid #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 25px;
+      color: #2c3e50;
+      border: 2px solid #2c3e50;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       background-color: transparent;
-      transition: background 0.3s, color 0.3s;
-      font-family: 'Segoe UI', sans-serif;
+      transition: all 0.3s ease;
       margin: 10px;
+      min-width: 140px;
     }
     .social-btn:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: #2c3e50;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .social-btn svg,
+    .social-btn img {
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 40px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+      .nav-bar {
+        gap: 10px;
+      }
+      .nav-bar a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
+      .social-btn {
+        padding: 10px 15px;
+        min-width: 120px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
@@ -161,10 +212,13 @@
     <h3>ABOUT ME</h3>
     <div class="content-box" style="text-align: center;">
       <a href="https://scholar.google.com/citations?hl=zh-CN&user=emaGkOsAAAAJ" target="_blank" class="social-btn">
-        🎓 Google Scholar
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 19h-2v-9h2v9zm-1-12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm7 12.25h-3.5v-9h-2v9h-3.5v-13h9v13z"/>
+        </svg>
+        Google Scholar
       </a>
       <a href="https://github.com/Asher-Su?tab=repositories" target="_blank" class="social-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 .297c-6.63 0-12 5.373-12 12 
             0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
             0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
@@ -184,17 +238,23 @@
         GitHub
       </a>
       <a href="https://www.linkedin.com/in/%E5%A4%A9%E6%B8%9D-%E8%8B%8F-438a5a36a/" target="_blank" class="social-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
         LinkedIn
       </a>
       <a href="https://x.com/AsherSu1024" target="_blank" class="social-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_2021.svg" alt="Twitter" style="vertical-align: middle; margin-right: 6px;" width="18" height="18"/>
-        X
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        X (Twitter)
       </a>
     </div>    
   </section>
+
+  <footer>
+    <p>© 2024 Tianyu Su. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
